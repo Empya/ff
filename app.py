@@ -97,7 +97,7 @@ def register():
         session["status"] = "Alive"
         db.session.add(player)
         db.session.commit()
-        return render_template("signup_success html")
+        return render_template("signup_success.html")
         
     else:
         return render_template("index.html", date=current)
