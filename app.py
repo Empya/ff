@@ -286,4 +286,4 @@ def remove_match(id):
     db.session. commit()
     return "%MATCH DELETED" #%(match.p1, match.p2)
 
-app.run(debug=True)
+
