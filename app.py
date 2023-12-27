@@ -278,7 +278,7 @@ def changescore(id,s1,s2):
 @app.route("/eliminate/<int:id>")
 
 def eliminate(id):
-    player = Player.query.filter(Player.id ==id)
+    player = Player.query.filter(Player.id ==id).first()
     player.status = "eliminated"
     db.session.commit()
     return f"player {player.pname} has Been eliminated"
