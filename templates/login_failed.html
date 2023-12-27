@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title%}Login Failed{%endblock%}
+{%block content%}
+
+<div class="alert alert-danger alert-dismissable fixed-top">
+ <button class="close" data-target="alert-dismissable" data-dismiss="alert">&times;</button>
+ Failed to login , HAVE YOU SIGNED UP ? or <strong>Check your player name and phone number for any errors</strong>
+</div>
+
+<div class="container p-5">
+ <div class="text-center p-5">
+  <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">Click The Button To Go Back</p>
+ <a href="{{url_for("login")}}"> <button class="btn btn-dark my-5">Back</button></a>
+ </div>
+</div>
+
+{%endblock%}

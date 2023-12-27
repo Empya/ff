@@ -1,0 +1,60 @@
+{%extends "base.html"%}
+{%block title %}
+Profile Page
+{%endblock%}
+{%block content %}
+
+<div class="container p-5 text-center">
+ <div class="card px-3">
+  
+  <h1 class="card-header">ViperX49</h1>
+  <div class="container px-5">
+  
+  {%if picture == ""%}
+  <img src="{{url_for("static", filename="empya.png")}}" alt="" class="card-img-top rounded-circle img-fluid" src="logo.webp">
+  
+  {%else%}
+  <img src="{{url_for("static",filename=picture)}}" alt="Profile Pic" class="card-img-top rounded-circle img-fluid">
+  {%endif%}
+  
+  
+  </div>
+  <br>
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;">{{session["name"]}}</p>
+   <br>
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;"></p>
+   <br>
+   
+   {% if session["status"] == "Alive"%}
+   
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;">Status : Alive</p>
+   
+   {%else%}
+   
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;">Status : Eliminated</p>
+   
+   {%endif%}
+   
+   
+   <br>
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;">phone number : session["phone"]</p>
+   <br>
+   <p class="text-secondary"style="font-family:Abel; font-size:1.5rem;"><strong>ID:{{session["id"]}}</strong></p>
+ 
+ </div>
+</div>
+
+<div class="container px-5 text-center">
+<form action="{{url_for("upload_pic")}}" method="post" enctype="multipart/form-data">
+ <label for="inp" class="custom-input-label text-secondary" style="font-family:Abel;">Click <strong>Here</strong> To Upload Pic</label>
+ <input type="file" class=" btn btn-dark custom-file-input" name="file">
+ <label>
+ {{session["imgnam"]}}
+ </label>
+ <input type="submit" class="btn btn-outline-dark my-5" value="upload" required>
+ </form>
+</div>
+
+
+
+{%endblock%}

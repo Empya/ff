@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+{%block title%}Home{%endblock%}
+{%block content %}
+
+
+<div class="container p-5 bg-light text-center" style="background:#eaffea;">
+ <p class="my-5 py-5 text-secondary text-capitalize" style="font-size:1.5rem;font-family:Abel;">If you want to participate, sign up now</p>
+<a href="{{url_for("signup")}}"> <button class="btn btn-outline-dark btn-lg my-2">Sign Up</button></a>
+</div>
+
+<div class="container">
+{% if date.year == 2023 and date.month == 12 and date.day >= 30%}
+<p class="my-5 py-5 text-center text-secondary" style="font-size:1.5rem;font-family:Abel;">
+    Tournament Has Begun
+</p>
+{% else%}
+
+<p class="my-5 py-5 text-center text-secondary"style="font-size:1.5rem;font-family:Abel;" >
+    Tournament hasn't begun
+</p>
+
+{%endif%}
+
+
+</div>
+
+<div class="container text-center mb-5">
+ <h1 class="my-3 py-5 text-secondary">Upcoming Match</h1>
+ <div class="card border-0 shadow-lg rounded-top">
+  <p class="card-body mt-1">
+   <h3 class="text-secondary">Unknown</h3>
+   <br>
+   <h3 class="text-secondary">VS</h3>
+   <br>
+   <h3 class="text-secondary">Unknown</h3>
+  </p>
+ </div>
+</div>
+{%endblock%}

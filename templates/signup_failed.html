@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title%}Sign Up Failed{%endblock%}
+{%block content%}
+
+<div class="alert alert-danger alert-dismissable fixed-top">
+ <button class="close" data-target="alert-dismissable" data-dismiss="alert">&times;</button>
+ <strong>Either your Name or your Player name or phone number has been used before, please try again</strong>
+</div>
+
+<div class="container p-5">
+ <div class="text-center p-5">
+  <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">Click The Button To Go Back</p>
+  <a href="{{url_for("signup")}}"><button class="btn btn-dark my-5">Back</button>
+ </div></a>
+</div>
+
+{%endblock%}

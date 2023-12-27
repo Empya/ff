@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+
+{%block title%}Login{%endblock%}
+
+{%block content%}
+
+<div class="container shadow-lg px-4 p-1">
+    <h4 class="py-5 my-5 text-center text-secondary">Login</h1>
+    <form action="{{url_for("verify")}}" method="post">
+    
+        <div class="form-group my-5">
+   <label for="name">Player Name</label>
+   <input type="text" name="pname" class="form-control" id="name" required>
+      </div>
+      
+      <div class="form-group my-5">
+   <label for="phone">Phone Number</label>
+   <input type="tel" name="phone" class="form-control" id="phone" required>
+      </div>
+  
+        <div class ="form-group text-center">
+            <input type="submit" name="name" class="btn btn-lg btn-dark">
+        </div>
+        
+    </form>
+</div>
+
+{%endblock%}

@@ -1,0 +1,30 @@
+{%extends "base.html" %}
+{%block title%}All Registered Users{%endblock%}
+{%block content %}
+<div class="container-fluid text-center">
+<div class="container-fluid">
+
+<table class="table table-striped table-responsive-sm" style="width:100%;">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Points</th>
+        <th>Prof Pic</th>
+        <th>phone</th>
+    </tr>
+    
+    {%for player in Allplayers%}
+        <tr>
+            <td>{{player.id}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.points}}</td>
+            <td>{{player.profilepic}}</td>       
+            <td>{{player.phone}}</td>     
+        </tr>
+        
+     {% endfor%}
+</table>
+
+</div>
+</div>
+{%endblock%}

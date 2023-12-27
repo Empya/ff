@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+{%block title%}Tournament Sign Up{%endblock%}
+{%block content%}
+
+<div class="container shadow-lg p-1 border-0 px-4">
+  <h4 class="my-5 py-5 text-center text-secondary">Sign Up</h4>
+  <form action="{{url_for("register")}}" method="post">
+
+  <div class="form-group my-5">
+   <label for="name">WhatsApp Name</label>
+   <input type="text" name="name" class="form-control" id="name" required>
+  </div>
+  
+  <div class="form-group my-5">
+   <label for="playername">Player Name</label>
+   <input type="text" name="playername" class="form-control" id="playername" required>
+  </div>
+  
+  <div class="form-group my-5">
+   <input type="tel" name="phone" class="form-control" required placeholder="Whatsapp Phone number">
+  </div>
+ 
+ <div class="text-center mb-5">
+  <input class="btn btn-outline-dark text-center" type="submit">
+  </div>
+  </div>
+ </form>
+</div>
+{%endblock%}

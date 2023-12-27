@@ -1,0 +1,48 @@
+{%extends "base.html"%}
+{%block title%}All MatchUps{%endblock%}
+{%block content%}
+
+<div class="container-fluid">
+    
+    <div class="card-columns px-3">
+        
+        {%for any in all%}
+
+
+            <a href="" ><div class="card text-center my-5">
+
+                 <div class="card-body border-0 shadow-lg">
+ 
+                     {% if session["pname"] == any.p1%}
+                     <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;"><strong>{{any.p1}}</strong></p>
+                     
+                     {%else%}
+                     <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">{{any.p1}}</p>
+                     {%endif%}
+ 
+                      <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">VS</p>
+  
+  
+                    {% if session["pname"] == any.p2%}  
+                     <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;"><strong>{{any.p2}}</strong></p>
+                     {%else%}
+                     <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">{{any.p2}}</p>
+                     {%endif%}
+  
+                    <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">{{any.score1}} : {{any.score2}}</p>
+  
+                    {%if any.status == "-"%}
+                        <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">Not Played</p>
+                   {%else%}
+                        <p class="text-secondary" style="font-family:Abel; font-size:1.5rem;">Match Ended</p>
+                   {%endif%}
+                   
+                 </div></a>
+            </div>
+          
+
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}
