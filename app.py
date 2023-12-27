@@ -91,12 +91,12 @@ def register():
                 return render_template("signup_failed.html")
                 
             else:
-                pass
+                return render_template("signup_failed.html")            
         
         player = Player(get_id(Player) , name, pname, 0, "", phone, "Alive")
         session["status"] = "Alive"
         db.session.add(player)
-        db.session. commit()
+        db.session.commit()
         return render_template("signup_success html")
         
     else:
