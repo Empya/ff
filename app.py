@@ -215,10 +215,14 @@ def verify():
 
 def profile():
     x = ""
-    if session["loggedin"] == "True":
-        p = Player.query. filter(Player.id == session["id"]).first()
-        session["profilepic"] = p.profilepic
-        return render_template("profile.html", picture=p.profilepic)
+    try:
+        if session["loggedin"] == "True":
+            p = Player.query. filter(Player.id == session["id"]).first()
+            session["profilepic"] = p.profilepic
+            return render_template("profile.html", picture=p.profilepic)
+
+    except:
+        pass
 
     else:
         return redirect(url_for("login"))
