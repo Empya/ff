@@ -96,7 +96,7 @@ def register():
         player = Player(get_id(Player) , name, pname, 0, "", phone, "Alive")
         db.session. add(player)
         db.session. commit()
-        return redirect(url_for("view")) #render_template("signup_success html")
+        return render_template("signup_success.html") #render_template("signup_success html")
         
     else:
         return render_template("index.html", date=current)
