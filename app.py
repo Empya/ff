@@ -160,6 +160,8 @@ def clear_all():
         db.session. delete(match)
         db.session. commit()
 
+    return <h1> All Players And Matches Cleared </h1>
+
 @app.route("/tournament/all_matchups")
 
 def show_matchups():
