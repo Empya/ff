@@ -91,7 +91,7 @@ def register():
                 return render_template("signup_failed.html")
                 
             else:
-                return render_template("signup_failed.html")            
+                pass           
         
         player = Player(get_id(Player) , name, pname, 0, "", phone, "Alive")
         session["status"] = "Alive"
