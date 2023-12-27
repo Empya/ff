@@ -273,7 +273,7 @@ def changescore(id,s1,s2):
   
     match_delta.status = "ended"
     db.session.commit()
-    return "match %s vs %s ----%s : %s and match ended"%(match_delta.p1,match_delta.p2,match_delta.score1,match_delta.score)
+    return "match %s vs %s ----%s : %s and match ended"%(match_delta.p1,match_delta.p2,match_delta.score1,match_delta.score2)
     
 @app.route("/eliminate/<int:id>")
 
