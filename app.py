@@ -84,7 +84,7 @@ def register():
         """collect data""" 
         name = request.form["name"]
         pname = request.form["playername"]
-        phone = request. form["phone"]
+        phone = request.form["phone"]
         
         for player in Player. query.all():
             if player.name == name or player.pname == pname or player.phone == phone:
