@@ -11,6 +11,7 @@
         <th>Points</th>
         <th>Prof Pic</th>
         <th>phone</th>
+        <th>status</th>
     </tr>
     
     {%for player in Allplayers%}
@@ -20,6 +21,7 @@
             <td>{{player.points}}</td>
             <td>{{player.profilepic}}</td>       
             <td>{{player.phone}}</td>     
+            <td>{{player.status}}</td>
         </tr>
         
      {% endfor%}
