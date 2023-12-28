@@ -341,7 +341,7 @@ def click_match(matchid):
                 #return send_from_directory(app.config["UPLOAD_FOLDER"], match.matchpic)
             
             except:
-                return redirect(url_for("login"))
+                return """<h1>PLAYERS HAVE NOT UPLOADED MATCH PIC YET</h1>"""
 #                
 @app.route("/success/pic_uploaded/<matchid>", methods=["POST"])
 
