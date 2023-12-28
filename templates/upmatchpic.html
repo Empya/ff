@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block title%}Match Info{%endblock%}
+
+{%block content%}
+<div class="container-fluid text-center">
+<div class="container text-center pt-3">
+ <img src="{{url_for("static", filename=match.matchpic)}}"  alt="MATCH PIC, MAKE SURE YOU UPLOAD YOUR MATCH PIC AFTER ANY MATCH AS PROOF" class="img-fluid">
+</div>
+<div class="container custom-file p-2 text-center">
+ <form action="{{url_for("get_pic", matchid=match.id)}}" method="post" name="file" enctype="multipart/form-data" >
+  <label for="pic" class="custom-file-label"></label>
+  <input type="file" name="file" id="pic">
+  <input type="submit" class="btn btn-dark">
+ </form>
+</div>
+
+<div class="container text-center p-5">
+
+</div>
+
+</div>
+{%endblock%}
