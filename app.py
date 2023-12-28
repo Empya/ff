@@ -168,8 +168,12 @@ def clear_all():
 
 def show_matchups():
     current = datetime.datetime.today()
-    if session["loggedin"] == "True":
-        return render_template("vm.html", all=Match.query.all())
+    try:
+        if session["loggedin"] == "True":
+            return render_template("vm.html", all=Match.query.all())
+    except KeyError: 
+        return redirect(url_for("login"))
+        
         
     else:
         return redirect(url_for("login"))
