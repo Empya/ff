@@ -19,8 +19,9 @@ class Player(db.Model):
     points = db.Column("Points",db.Integer)
     profilepic = db.Column("profilepic",db.String(300))
     status = db.Column("status", db.String(300))
+    matchpic =db.Column("matchpic", db.String(750))
     
-    def __init__(self, id, name, pname, points,profilepic, phone, status):
+    def __init__(self, id, name, pname, points,profilepic, phone, status, matchpic):
         self.id = id
         self.name = name
         self.pname = pname
@@ -28,6 +29,7 @@ class Player(db.Model):
         self.profilepic = profilepic
         self.phone = phone
         self.status = status
+        self.matchpic = matchpic
     
 class Match(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -93,7 +95,7 @@ def register():
             else:
                 pass           
         
-        player = Player(get_id(Player) , name, pname, 0, "", phone, "Alive")
+        player = Player(get_id(Player) , name, pname, 0, "", phone, "Alive", "")
         session["status"] = "Alive"
         db.session.add(player)
         db.session.commit()
