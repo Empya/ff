@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-{% if date.year == 2023 and date.month == 12 and date.day >= 30%}
+{% if (date.year == 2023 and date.month == 12 and date.day >= 30) or (date.year==2024 and date.month==1 and date.day >= 1)%}
 <p class="my-5 py-5 text-center text-secondary" style="font-size:1.5rem;font-family:Abel;">
     Tournament Has Begun
 </p>
