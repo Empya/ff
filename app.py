@@ -317,3 +317,49 @@ def logout():
     else:
         return render_template("index.html", date=current)
 
+
+
+@app.route("/matchup/view/<matchid>")
+
+def click_match(matchid):
+    
+    match = Match.query.filter(Match.id==int(matchid)).first()
+    
+    try:
+        session["loggedin"]
+        
+    except KeyError: 
+        return redirect(url_for("login"))
+
+    if session["loggedin"] == "True":
+        if session["pname"] == match.p1 or session["pname"] == match.p2:
+            return render_template("upmatchpic.html", match=match)
+            
+        else:
+            try:
+                return render_template("viewpic.html", pic=match.matchpic)
+                #return send_from_directory(app.config["UPLOAD_FOLDER"], match.matchpic)
+            
+            except:
+                return redirect(url_for("login"))
+#                
+@app.route("/success/pic_uploaded/<matchid>", methods=["POST"])
+
+def get_pic(matchid):
+    mch = Match.query.filter(Match.id==int(matchid)).first()
+    if request. method == "POST": 
+        try:
+            mp = request.files["file"]
+            mp.save(app.config["UPLOAD_FOLDER"]+"/"+mp.filename)
+            mch.matchpic = str(mp.filename)
+            db.session.commit()
+            return render_template("upmatchpic.html", match=mch)
+            
+        except:
+            return redirect(url_for("click_match", matchid=mch.id))
+               
+        
+    else:
+        return " Try Again"
+                  
+                
