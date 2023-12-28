@@ -229,11 +229,12 @@ def profile():
             session["profilepic"] = p.profilepic
             return render_template("profile.html", picture=p.profilepic)
 
-    except:
-        pass
-
-    else:
+        else: 
+            return redirect(url_for("login"))
+  
+    except: 
         return redirect(url_for("login"))
+  
         
 @app.route("/upload_pic", methods=["POST"])
 
