@@ -7,6 +7,7 @@ import random
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "a4b2zt745srty"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Tournament.sqlite3"
+app.config["SQLALCHEMY_TRACK_MODIFICATION"]=False
 app.config["UPLOAD_FOLDER"] = "static"
 
 db = SQLAlchemy(app)
